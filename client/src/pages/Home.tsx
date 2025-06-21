@@ -122,7 +122,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 section-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2
@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview Section */}
-      <section className="py-20">
+      <section className="py-20 section-contrast">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2

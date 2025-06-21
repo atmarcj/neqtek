@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 100%);
+  --background: hsl(0, 0%, 98%);
   --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
+  --muted: hsl(210, 40%, 94%);
   --muted-foreground: hsl(25, 5.3%, 44.7%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(20, 14.3%, 4.1%);
   --card: hsl(0, 0%, 100%);
   --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
   --primary: hsl(158, 64%, 52%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary: hsl(210, 40%, 96%);
   --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
+  --accent: hsl(210, 40%, 96%);
   --accent-foreground: hsl(24, 9.8%, 10%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
@@ -28,6 +28,10 @@
   --brand-green: hsl(158, 64%, 52%);
   --brand-blue: hsl(217, 91%, 60%);
   --brand-gradient: linear-gradient(135deg, hsl(158, 64%, 52%), hsl(217, 91%, 60%));
+  
+  /* Section backgrounds for better visibility */
+  --section-bg-light: hsl(210, 40%, 96%);
+  --section-border-light: hsl(214, 32%, 88%);
   
   /* Dark theme overrides */
   --dark-bg: hsl(222, 84%, 5%);
@@ -112,6 +116,31 @@
     background: rgba(17, 24, 39, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Section styling for better visibility */
+  .section-bg {
+    background: var(--section-bg-light);
+    border-top: 1px solid var(--section-border-light);
+    border-bottom: 1px solid var(--section-border-light);
+  }
+  
+  .dark .section-bg {
+    background: hsl(217, 33%, 17%);
+    border-top: 1px solid hsl(215, 20%, 25%);
+    border-bottom: 1px solid hsl(215, 20%, 25%);
+  }
+  
+  .section-contrast {
+    background: hsl(0, 0%, 100%);
+    border-top: 1px solid var(--section-border-light);
+    border-bottom: 1px solid var(--section-border-light);
+  }
+  
+  .dark .section-contrast {
+    background: hsl(222, 84%, 5%);
+    border-top: 1px solid hsl(215, 20%, 25%);
+    border-bottom: 1px solid hsl(215, 20%, 25%);
   }
 }
 

@@ -84,7 +84,7 @@ export default function Contact() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-muted/50">
+      <section className="pt-20 pb-16 section-bg">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -107,7 +107,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20">
+      <section className="py-20 section-contrast">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             
