@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './Logo';
-import { useTheme } from '@/hooks/use-theme';
-import { useLanguage, type Language } from '@/hooks/use-language';
+import { useLanguage } from '@/hooks/use-language';
+import type { Language } from '@/lib/i18n';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
-  const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
 
   const isActive = (path: string) => location === path;
@@ -23,9 +22,9 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-effect bg-background/80 dark:bg-background/80 border-b border-border">
+    <nav className="fixed top-0 w-full z-50 glass-effect border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <Link href="/">
             <Logo />
           </Link>
@@ -36,11 +35,14 @@ export function Navigation() {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
+                className={`text-sm font-medium transition-all duration-300 hover:text-primary relative group ${
                   isActive(item.path) ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
                 {item.label}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-green to-brand-blue transition-all duration-300 group-hover:w-full ${
+                  isActive(item.path) ? 'w-full' : ''
+                }`}></span>
               </Link>
             ))}
           </div>
@@ -49,7 +51,7 @@ export function Navigation() {
           <div className="flex items-center space-x-4">
             {/* Language Selector */}
             <Select value={language} onValueChange={(value: Language) => setLanguage(value)}>
-              <SelectTrigger className="w-16 h-8 text-xs">
+              <SelectTrigger className="w-20 h-10 text-sm modern-card">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -59,25 +61,11 @@ export function Navigation() {
               </SelectContent>
             </Select>
 
-            {/* Theme Toggle */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleTheme}
-              className="h-8 w-8 p-0"
-            >
-              {theme === 'light' ? (
-                <Moon className="h-4 w-4" />
-              ) : (
-                <Sun className="h-4 w-4" />
-              )}
-            </Button>
-
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden h-8 w-8 p-0"
+              className="md:hidden h-10 w-10 p-0 modern-card"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -97,8 +85,8 @@ export function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-background/95 dark:bg-background/95 backdrop-blur-lg border-b border-border"
+            transition={{ duration: 0.3 }}
+            className="md:hidden glass-effect border-b border-border/50"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
@@ -106,7 +94,7 @@ export function Navigation() {
                   key={item.path}
                   href={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block text-lg font-medium transition-colors duration-200 hover:text-primary ${
+                  className={`block text-lg font-medium transition-all duration-300 hover:text-primary ${
                     isActive(item.path) ? 'text-primary' : 'text-muted-foreground'
                   }`}
                 >

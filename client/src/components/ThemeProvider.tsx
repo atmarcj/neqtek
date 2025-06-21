@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { ThemeContext, type Theme } from '@/hooks/use-theme';
 
 interface ThemeProviderProps {
@@ -6,21 +6,16 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const stored = localStorage.getItem('theme');
-    return (stored as Theme) || 'light';
-  });
+  const theme: Theme = 'dark';
 
   useEffect(() => {
     const root = window.document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    root.classList.add('dark');
+    document.body.style.backgroundColor = 'hsl(222, 84%, 4%)';
+  }, []);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+  const setTheme = () => {}; // No-op since we only support dark mode
+  const toggleTheme = () => {}; // No-op
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>

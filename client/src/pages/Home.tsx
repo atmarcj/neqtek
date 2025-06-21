@@ -71,30 +71,43 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 gradient-bg opacity-10"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden cyber-grid">
+        {/* Animated Background */}
+        <div className="absolute inset-0 gradient-bg opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
         
         {/* Floating Icons */}
         <FloatingIcons />
         
         {/* Hero Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-8"
           >
-            <span>{t('hero.title.1')}</span><br />
-            <span className="text-gradient">{t('hero.title.2')}</span>
+            <div className="inline-flex items-center px-6 py-3 rounded-full glass-effect mb-6">
+              <div className="w-2 h-2 bg-brand-green rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-medium">Modern Digital Solutions</span>
+            </div>
+          </motion.div>
+          
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
+          >
+            <span className="block">{t('hero.title.1')}</span>
+            <span className="block text-gradient bg-clip-text">{t('hero.title.2')}</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -102,17 +115,17 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center"
           >
-            <Button asChild size="lg" className="gradient-bg text-white hover-lift">
+            <Button asChild size="lg" className="gradient-bg text-white hover-lift px-8 py-4 text-lg font-semibold rounded-2xl">
               <Link href="/services">
                 {t('hero.cta.services')}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-3 h-5 w-5" />
               </Link>
             </Button>
             
-            <Button asChild variant="outline" size="lg" className="hover-lift">
+            <Button asChild variant="outline" size="lg" className="hover-lift modern-card px-8 py-4 text-lg font-semibold rounded-2xl">
               <Link href="/contact">
                 {t('hero.cta.contact')}
               </Link>
@@ -155,13 +168,13 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="text-center p-6 hover-lift light-card">
+                <Card className="text-center p-8 hover-lift modern-card">
                   <CardContent className="p-0">
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${feature.gradient}`}>
-                      <feature.icon className="w-8 h-8 text-white" />
+                    <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 ${feature.gradient} neon-glow`}>
+                      <feature.icon className="w-10 h-10 text-white" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 className="text-xl font-bold mb-3 text-gradient">{feature.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
