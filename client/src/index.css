@@ -100,6 +100,19 @@
   .dark .hover-lift:hover {
     box-shadow: 0 20px 40px hsl(0, 0%, 0%, 0.3);
   }
+  
+  /* Light mode card improvements */
+  .light-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .dark .light-card {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @keyframes gradient {

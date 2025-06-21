@@ -17,7 +17,7 @@ export function ServiceCard({ icon: Icon, title, description, features, gradient
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
-      className="p-8 bg-gradient-to-br from-white/50 to-gray-50/50 dark:from-gray-800/50 dark:to-gray-900/50 rounded-3xl hover-lift backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50"
+      className="p-8 light-card rounded-3xl hover-lift backdrop-blur-sm"
     >
       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${gradient}`}>
         <Icon className="w-7 h-7 text-white" />

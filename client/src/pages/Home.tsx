@@ -155,7 +155,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="text-center p-6 hover-lift bg-background/50 backdrop-blur-sm">
+                <Card className="text-center p-6 hover-lift light-card">
                   <CardContent className="p-0">
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${feature.gradient}`}>
                       <feature.icon className="w-8 h-8 text-white" />

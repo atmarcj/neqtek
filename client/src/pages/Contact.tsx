@@ -167,7 +167,7 @@ export default function Contact() {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>{t('contact.form.service')}</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <Select onValueChange={field.onChange} value={field.value || undefined}>
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Select a service..." />
@@ -241,7 +241,7 @@ export default function Contact() {
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {languages.map((lang, index) => (
-                      <Card key={index} className="p-3 bg-muted/50">
+                      <Card key={index} className="p-3 light-card">
                         <CardContent className="p-0">
                           <div className="flex items-center">
                             <span className="text-2xl mr-2">{lang.code}</span>
