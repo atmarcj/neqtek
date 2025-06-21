@@ -30,12 +30,12 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-all duration-300 hover:text-primary relative group ${
+                className={`text-lg font-semibold transition-all duration-300 hover:text-primary relative group ${
                   isActive(item.path) ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
@@ -94,7 +94,7 @@ export function Navigation() {
                   key={item.path}
                   href={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block text-lg font-medium transition-all duration-300 hover:text-primary ${
+                  className={`block text-xl font-semibold transition-all duration-300 hover:text-primary ${
                     isActive(item.path) ? 'text-primary' : 'text-muted-foreground'
                   }`}
                 >
