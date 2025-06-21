@@ -241,11 +241,11 @@ export default function Contact() {
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {languages.map((lang, index) => (
-                      <Card key={index} className="p-3 light-card">
+                      <Card key={index} className="p-4 modern-card hover-lift">
                         <CardContent className="p-0">
                           <div className="flex items-center">
-                            <span className="text-2xl mr-2">{lang.code}</span>
-                            <span>{lang.name}</span>
+                            <span className="text-3xl mr-3">{lang.code}</span>
+                            <span className="font-semibold">{lang.name}</span>
                           </div>
                         </CardContent>
                       </Card>

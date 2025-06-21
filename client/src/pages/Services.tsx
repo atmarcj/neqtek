@@ -213,10 +213,10 @@ export default function Services() {
                     {service.features.map((feature, featureIndex) => {
                       const [title, description] = feature.split(' - ');
                       return (
-                        <Card key={featureIndex} className="p-4 light-card">
+                        <Card key={featureIndex} className="p-6 modern-card">
                           <CardContent className="p-0">
-                            <h4 className="font-semibold mb-2">{title}</h4>
-                            <p className="text-sm text-muted-foreground">{description}</p>
+                            <h4 className="font-bold mb-3 text-gradient">{title}</h4>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
                           </CardContent>
                         </Card>
                       );
