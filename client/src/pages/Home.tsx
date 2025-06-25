@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const features = [
     {
@@ -89,7 +89,11 @@ export default function Home() {
           >
             <div className="inline-flex items-center px-6 py-3 rounded-full glass-effect mb-6">
               <div className="w-2 h-2 bg-brand-green rounded-full mr-3 animate-pulse"></div>
-              <span className="text-sm font-medium">Modern Digital Solutions</span>
+              <span className="text-sm font-medium">
+                {language === 'fr' ? 'Solutions Numériques Modernes' : 
+                 language === 'es' ? 'Soluciones Digitales Modernas' : 
+                 'Modern Digital Solutions'}
+              </span>
             </div>
           </motion.div>
           

@@ -212,7 +212,7 @@ export default function Contact() {
                       {contactMutation.isPending ? (
                         <>
                           <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                          Sending...
+                          {language === 'fr' ? 'Envoi...' : language === 'es' ? 'Enviando...' : 'Sending...'}
                         </>
                       ) : (
                         t('contact.form.submit')
@@ -230,14 +230,14 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="lg:pl-8"
             >
-              <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('contact.title')}</h2>
               
               <div className="space-y-8">
                 {/* Languages */}
                 <div>
                   <h3 className="text-lg font-semibold mb-4 flex items-center">
                     <Globe className="w-5 h-5 text-brand-green mr-2" />
-                    We Speak
+                    {t('contact.languages')}
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {languages.map((lang, index) => (
@@ -258,7 +258,7 @@ export default function Contact() {
                   <CardContent className="p-0">
                     <h3 className="text-lg font-semibold mb-3 flex items-center">
                       <Clock className="w-5 h-5 text-brand-blue mr-2" />
-                      Quick Response
+                      {t('contact.response').split(':')[0]}
                     </h3>
                     <p className="text-muted-foreground">
                       {t('contact.response')}
@@ -270,7 +270,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-semibold mb-4 flex items-center">
                     <Users className="w-5 h-5 text-emerald-500 mr-2" />
-                    Who We Serve
+                    {t('contact.clients.title')}
                   </h3>
                   <ul className="space-y-2 text-muted-foreground">
                     {clientTypes.map((type, index) => (
