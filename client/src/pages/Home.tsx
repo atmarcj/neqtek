@@ -42,28 +42,28 @@ export default function Home() {
       icon: Monitor,
       title: t('services.web.title'),
       description: t('services.web.desc'),
-      features: ['• Sales landing pages', '• Shopify stores with automation', '• Corporate sites in 7 days'],
+      features: [`• ${t('services.web.feature1')}`, `• ${t('services.web.feature2')}`, `• ${t('services.web.feature3')}`],
       gradient: 'bg-brand-green'
     },
     {
       icon: Users,
       title: t('services.ai.title'),
       description: t('services.ai.desc'),
-      features: ['• 24/7 customer service bots', '• AI content generators', '• Document processing agents'],
+      features: [`• ${t('services.ai.feature1')}`, `• ${t('services.ai.feature2')}`, `• ${t('services.ai.feature3')}`],
       gradient: 'bg-brand-blue'
     },
     {
       icon: Shield,
       title: t('services.qa.title'),
       description: t('services.qa.desc'),
-      features: ['• Full website quality audit', '• Automated software testing', '• Performance & accessibility testing'],
+      features: [`• ${t('services.qa.feature1')}`, `• ${t('services.qa.feature2')}`, `• ${t('services.qa.feature3')}`],
       gradient: 'bg-emerald-500'
     },
     {
       icon: BarChart3,
       title: t('services.data.title'),
       description: t('services.data.desc'),
-      features: ['• Real-time Power BI dashboards', '• Automated task scripts', '• Database cleaning & ETL flows'],
+      features: [`• ${t('services.data.feature1')}`, `• ${t('services.data.feature2')}`, `• ${t('services.data.feature3')}`],
       gradient: 'bg-sky-500'
     }
   ];

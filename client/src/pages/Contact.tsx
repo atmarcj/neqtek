@@ -75,10 +75,10 @@ export default function Contact() {
   ];
 
   const clientTypes = [
-    'Entrepreneurs launching new businesses',
-    'SMEs seeking digital transformation',
-    'Startups that need to move fast',
-    'Teams looking to automate work',
+    t('contact.client1'),
+    t('contact.client2'),
+    t('contact.client3'),
+    t('contact.client4'),
   ];
 
   return (

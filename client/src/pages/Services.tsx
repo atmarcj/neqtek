@@ -14,10 +14,10 @@ export default function Services() {
       title: t('services.web.title'),
       description: t('services.web.desc'),
       features: [
-        'Sales Landing Pages - High-converting pages designed to turn visitors into customers',
-        'Shopify Integration - Complete e-commerce solutions with automation',
-        'Corporate Websites - Professional business presence in just one week',
-        'Mobile Optimization - Perfect experience across all devices'
+        t('services.web.feature1'),
+        t('services.web.feature2'),
+        t('services.web.feature3'),
+        t('services.web.feature4')
       ],
       gradient: 'bg-brand-green',
       mockup: 'website'
@@ -27,10 +27,10 @@ export default function Services() {
       title: t('services.ai.title'),
       description: t('services.ai.desc'),
       features: [
-        '24/7 Customer Service - Intelligent chatbots that never sleep',
-        'Content Generation - AI-powered writing and social media content',
-        'Document Processing - Automated reading and analysis of documents',
-        'Task Automation - Smart workflow automation and scheduling'
+        t('services.ai.feature1'),
+        t('services.ai.feature2'),
+        t('services.ai.feature3'),
+        t('services.ai.feature4')
       ],
       gradient: 'bg-brand-blue',
       mockup: 'chatbot'
@@ -40,10 +40,10 @@ export default function Services() {
       title: t('services.qa.title'),
       description: t('services.qa.desc'),
       features: [
-        'Quality Audits - Comprehensive website and app analysis',
-        'Automated Testing - Continuous testing for reliability',
-        'Performance Testing - Speed and load optimization',
-        'Accessibility Testing - Ensuring inclusivity for all users'
+        t('services.qa.feature1'),
+        t('services.qa.feature2'),
+        t('services.qa.feature3'),
+        t('services.qa.feature4')
       ],
       gradient: 'bg-emerald-500',
       mockup: 'testing'
@@ -53,10 +53,10 @@ export default function Services() {
       title: t('services.data.title'),
       description: t('services.data.desc'),
       features: [
-        'Power BI Dashboards - Real-time business intelligence and analytics',
-        'Task Automation - Scripts to automate repetitive processes',
-        'Database Management - Cleaning and optimizing your data',
-        'ETL Processes - Extract, transform, and load data flows'
+        t('services.data.feature1'),
+        t('services.data.feature2'),
+        t('services.data.feature3'),
+        t('services.data.feature4')
       ],
       gradient: 'bg-sky-500',
       mockup: 'dashboard'
